@@ -1,8 +1,8 @@
 import React from 'react';
-import './todo.css'
+import './Todo.css'
 
 
-function toDoForm(props) {
+function TodoForm(props) {
 
     return (
         <form>
@@ -21,4 +21,4 @@ function toDoForm(props) {
         </form>
     );
 } 
-export default toDoForm;
+export default TodoForm;

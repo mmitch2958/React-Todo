@@ -1,8 +1,8 @@
 import React from 'react';
 import './Todo.css'
-import todoNote from './Todo'
+import TodoNote from './Todo'
 
-function todoList(props) {
+function TodoList(props) {
     return (
         <div className='listContainer'>
             {props.todos.map(todo => {
@@ -15,4 +15,4 @@ function todoList(props) {
         </div>
     );
 }
-export default todoList; 
+export default TodoList; 

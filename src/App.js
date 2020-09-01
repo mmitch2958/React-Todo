@@ -1,12 +1,14 @@
 import React from 'react';
-import './App.css';
 
-import todoForm from './components/TodoForm'
-import todoList from './components/TodoList'
+
+import TodoForm from './components/TodoForm'
+import TodoList from './components/TodoList'
 
 const todoData = [
   
-
+  { task: 'Drink 16oz of water', id: 42, completed: false, textDecoration: "none" },
+  { task: 'Read a book', id: 17, completed: false, textDecoration: "none" },
+  { task: 'Study tomorrow\'s class materials', id: 86, completed: false, textDecoration: "none" }
 
 ]
 
@@ -71,10 +73,10 @@ class App extends React.Component {
       <div classname='body'>
         <div classname='App'>
           <h1 classname='header'>Your TODO List:</h1>
-          <todoList togComp={this.togComp}
+          <TodoList togComp={this.togComp}
             todos={this.state.todos}
           />
-          <todoForm
+          <TodoForm
             saveList={this.saveList}
             addNewItem={this.addNewItem}
             handleChanges={this.handleChanges}
@@ -90,4 +92,4 @@ class App extends React.Component {
 
 export default App; 
 
-export default App;
+
