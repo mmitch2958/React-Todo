@@ -17,7 +17,7 @@ class App extends React.Component {
     super();
     this.state = {
       todos: todoData,
-      todo: ''
+      todo: 'gti'
     };
 }
 
@@ -78,7 +78,7 @@ class App extends React.Component {
           />
           <TodoForm
             saveList={this.saveList}
-            addNewItem={this.addNewItem}
+            addNewToDo={this.addNewToDo}
             handleChanges={this.handleChanges}
             todo={this.state.todo}
           />
