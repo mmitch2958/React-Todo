@@ -3,7 +3,7 @@ import './Todo.css';
 
 
 
-function todoList(props){ 
+function todoNote(props){ 
 
     return (
         <div className='toDoList'>
@@ -15,4 +15,4 @@ function todoList(props){
     );
 };
 
-export default todoList;
+export default todoNote;
