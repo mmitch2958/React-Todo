@@ -6,9 +6,9 @@ import TodoList from './components/TodoList'
 
 const todoData = [
   
-  { task: 'Drink 16oz of water', id: 42, completed: false, textDecoration: "none" },
-  { task: 'Read a book', id: 17, completed: false, textDecoration: "none" },
-  { task: 'Study tomorrow\'s class materials', id: 86, completed: false, textDecoration: "none" }
+  { task: 'Return your express Jacket', id: 4, completed: false, textDecoration: "none" },
+  { task: 'Go to the Gym', id: 7, completed: false, textDecoration: "none" },
+  { task: 'Watch New Gerard Buttler Movie', id: 8, completed: false, textDecoration: "none" }
 
 ]
 
