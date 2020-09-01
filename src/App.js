@@ -60,18 +60,34 @@ class App extends React.Component {
     });
   }
 
-  
+
 
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
   // this component is going to take care of state, and any change handlers you need to work with your state
   render() {
+    console.log('its working!');
     return (
-      <div>
-        <h2>Welcome to your Todo App!</h2>
+      <div classname='body'>
+        <div classname='App'>
+          <h1 classname='header'>Your TODO List:</h1>
+          <todoList togComp={this.togComp}
+            todos={this.state.todos}
+          />
+          <todoForm
+            saveList={this.saveList}
+            addNewItem={this.addNewItem}
+            handleChanges={this.handleChanges}
+            todo={this.state.todo}
+          />
+                  
+        </div>
+        
       </div>
     );
   }
 }
+
+export default App; 
 
 export default App;
