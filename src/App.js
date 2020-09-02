@@ -3,9 +3,11 @@ import React from 'react';
 
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
+import './App.css';
 
-const todoData = [
-  
+
+const todos = [
+
   { task: 'Return your express Jacket', id: 4, completed: false, textDecoration: "none" },
   { task: 'Go to the Gym', id: 7, completed: false, textDecoration: "none" },
   { task: 'Watch New Gerard Buttler Movie', id: 8, completed: false, textDecoration: "none" }
@@ -16,24 +18,24 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos: todoData,
-      todo: 'gti'
+      todos: todos,
+      // todo: ''
     };
-}
+  }
 
   handleChanges = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  addNewToDo = ev => {
-    ev.preventDefault();
+  addNewToDo = evn => {
+    evn.preventDefault();
     this.setState({
       todos: [
         ...this.state.todos,
         {
           task: this.state.todo,
           id: Date.now(),
-          completed: false, textDecoration: 'none'
+          completed: false,
         }
       ],
       todo: ''
@@ -48,21 +50,36 @@ class App extends React.Component {
   }
 
   togComp = id => {
+
+    let todos = this.state.todos.map(todo => {
+      if (todo.id === id) {
+
+        todo.completd = !todo.completed
+      };
+
+      
+      return todo;
+    
+    })
+
+
     this.setState({
-      todos: this.state.todos.map(todo => {
-        if (todo.id === id) {
-         
-          return {
-            ...todo,
-            completd: !todo.completed
-          };
-        }
-        return todo;
-      })
-    });
-  }
+      todos,
+      todo: ''
+    })
+  };
 
 
+  // clearCompleted = () => {
+
+  //   this.setState( this.state.todos => {
+  //     return {
+  //       todos: this.state.todos.filter(todo => {
+  //         return !todo.completed;
+  //       })
+  //     }
+  //   })
+  // }
 
   // you will need a place to store your state in this component.
   // design `App` to be the parent component of your application.
@@ -70,26 +87,26 @@ class App extends React.Component {
   render() {
     console.log('its working!');
     return (
-      <div classname='body'>
-        <div classname='App'>
-          <h1 classname='header'>Your TODO List:</h1>
-          <TodoList togComp={this.togComp}
-            todos={this.state.todos}
-          />
+      <div className ='body'>
+        <div className ='App'>
+          <h1 className ='header'>Your TODO List:</h1>
+
           <TodoForm
             saveList={this.saveList}
             addNewToDo={this.addNewToDo}
             handleChanges={this.handleChanges}
             todo={this.state.todo}
           />
-                  
+          <TodoList togComp={this.togComp}
+            todos={this.state.todos}
+          />
         </div>
-        
+
       </div>
     );
   }
 }
 
-export default App; 
+export default App;
 
 
